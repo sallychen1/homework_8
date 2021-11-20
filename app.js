@@ -1,0 +1,77 @@
+function getBoredMsg() {
+    let boredReq = new XMLHttpRequest()
+    boredReq.open('GET', 'http://www.boredapi.com/api/activity/', true)
+    boredReq.onload = function() {
+        let data = JSON.parse(this.response)
+        if (boredReq.status >= 200 && boredReq.status < 400) {
+            document.getElementById('msg').innerHTML = data.activity;
+        } else {
+            console.log('error')
+        }
+    }
+    boredReq.send()
+}
+
+function getAdviceMsg() {
+    let adviceReq = new XMLHttpRequest()
+    adviceReq.open('GET', 'https://api.adviceslip.com/advice', true)
+    adviceReq.onload = function() {
+        let data = JSON.parse(this.response)
+        if (adviceReq.status >= 200 && adviceReq.status < 400) {
+            console.log(data.slip.advice)
+            document.getElementById('msg').innerHTML = data.slip.advice;
+        } else {
+            console.log('error')
+        }
+    }
+    adviceReq.send()
+}
+
+function getAffMsg() {
+    let affReq = new XMLHttpRequest()
+    affReq.open('GET', 'https://dulce-affirmations-api.herokuapp.com/affirmation', true)
+    affReq.onload = function() {
+        let data = JSON.parse(this.response)
+        if (affReq.status >= 200 && affReq.status < 400) {
+            document.getElementById('msg').innerHTML = data[0].phrase;
+        } else {
+            console.log('error')
+        }
+    }
+    affReq.send()
+}
+
+function getGeekMsg() {
+    let geekReq = new XMLHttpRequest()
+    geekReq.open('GET', 'https://geek-jokes.sameerkumar.website/api?format=json', true)
+    geekReq.onload = function() {
+        let data = JSON.parse(this.response)
+        if (geekReq.status >= 200 && geekReq.status < 400) {
+            document.getElementById('msg').innerHTML = data.joke;
+        } else {
+            console.log('error')
+        }
+    }
+    geekReq.send()
+}
+
+function randomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function getCatMsg() {
+    let catReq = new XMLHttpRequest()
+    catReq.open('GET', 'https://cat-fact.herokuapp.com/facts', true)
+    catReq.onload = function() {
+        let data = JSON.parse(this.response)
+        if (catReq.status >= 200 && catReq.status < 400) {
+            idx = randomInt(0, 4)
+            document.getElementById('msg').innerHTML = data[idx].text;
+        } else {
+            console.log('error')
+        }
+    }
+    catReq.send()
+}
