@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Name</title>
+    <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,26 +15,27 @@
 </head>
 
 <body>
-
-    <h1>How are you feeling?</h1>
     <div>
-        <a href="saved.html">saved</a>
+        <a href="index.html">Home</a>
     </div>
 
-    <div class="d-flex justify-content-around flex-wrap" id="emojis">
-        <img src="assets/love.svg" alt="love" onClick='getCatMsg()'>
-        <img src="assets/bored.svg" alt="bored" onClick='getBoredMsg()'>
-        <img src="assets/kiss.svg" alt="kiss" onClick='getAffMsg()'>
-        <img src="assets/laugh.svg" alt="laugh" onClick='getGeekMsg()'>
-        <img src="assets/stressed.svg" alt="stressed" onClick='getAdviceMsg()'>
+    <div class="list-msg">
+        <p>Nothing saved :(</p>
+    </div>
 
+    <div class="list-items">
+        <template id='list-item-template'>
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">Text</p>
+                    <button class="remove-button">Remove </button>
+                </div>
+            </div>
+        </div>
+    </template>
     </div>
-    <div id="msg">
-    </div>
-    <button id="add" onClick="addToSavedPage()">Add</button>
 
 </body>
-
-<script src="app.js"></script>
+<script src="saved.js"></script>
 
 </html>

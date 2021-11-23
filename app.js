@@ -18,7 +18,6 @@ function getAdviceMsg() {
     adviceReq.onload = function() {
         let data = JSON.parse(this.response)
         if (adviceReq.status >= 200 && adviceReq.status < 400) {
-            console.log(data.slip.advice)
             document.getElementById('msg').innerHTML = data.slip.advice;
         } else {
             console.log('error')
@@ -75,3 +74,24 @@ function getCatMsg() {
     }
     catReq.send()
 }
+
+
+// Create new Message object
+function Message(msgContent) {
+    this.content = msgContent;
+}
+
+const storedValue = JSON.parse(localStorage.getItem('savedList'));
+const savedpg = storedValue ? storedValue : [];
+
+function addToSavedPage() {
+    content = document.getElementById("msg").innerHTML;
+    const msg = new Message(content);
+    savedpg.push(msg);
+    localStorage.setItem('savedList', JSON.stringify(savedpg));
+    alert("Added to saved list!");
+}
+// Add event listener to button to properly add items to savedpg
+// document.getElementById("add").addEventListener('click', function() {
+
+// })
