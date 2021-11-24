@@ -1,3 +1,11 @@
+function displayClock() {
+    let display = new Date().toLocaleTimeString();
+    document.getElementById("time").innerHTML = display;
+    setTimeout(displayClock, 1000);
+}
+
+displayClock()
+
 function getBoredMsg() {
     let boredReq = new XMLHttpRequest()
     boredReq.open('GET', 'http://www.boredapi.com/api/activity/', true)
@@ -10,6 +18,7 @@ function getBoredMsg() {
         }
     }
     boredReq.send()
+    document.getElementById('add').style.display = 'flex';
 }
 
 function getAdviceMsg() {
@@ -24,6 +33,7 @@ function getAdviceMsg() {
         }
     }
     adviceReq.send()
+    document.getElementById('add').style.display = 'flex';
 }
 
 function getAffMsg() {
@@ -38,6 +48,7 @@ function getAffMsg() {
         }
     }
     affReq.send()
+    document.getElementById('add').style.display = 'flex';
 }
 
 function getGeekMsg() {
@@ -52,6 +63,7 @@ function getGeekMsg() {
         }
     }
     geekReq.send()
+    document.getElementById('add').style.display = 'flex';
 }
 
 function randomInt(min, max) {
@@ -73,6 +85,7 @@ function getCatMsg() {
         }
     }
     catReq.send()
+    document.getElementById('add').style.display = 'flex';
 }
 
 
@@ -91,7 +104,3 @@ function addToSavedPage() {
     localStorage.setItem('savedList', JSON.stringify(savedpg));
     alert("Added to saved list!");
 }
-// Add event listener to button to properly add items to savedpg
-// document.getElementById("add").addEventListener('click', function() {
-
-// })

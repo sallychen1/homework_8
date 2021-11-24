@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Name</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,11 +16,15 @@
 </head>
 
 <body>
-
-    <h1>How are you feeling?</h1>
-    <div>
-        <a href="saved.html">saved</a>
+    <div class="d-flex justify-content-end" id="saved">
+        <a href="saved.html"><i class="fas fa-bookmark"></i></a>
     </div>
+
+    <div class="header">
+        <p id="time"></p>
+        <h1>How are you feeling?</h1>
+    </div>
+
 
     <div class="d-flex justify-content-around flex-wrap" id="emojis">
         <img src="assets/love.svg" alt="love" onClick='getCatMsg()'>
@@ -29,9 +34,13 @@
         <img src="assets/stressed.svg" alt="stressed" onClick='getAdviceMsg()'>
 
     </div>
-    <div id="msg">
+
+    <div class="d-flex align-items-center flex-column">
+        <p id="msg"></p>
+        <button type="button" class="btn btn-dark" id="add" onClick="addToSavedPage()">Add</button>
     </div>
-    <button id="add" onClick="addToSavedPage()">Add</button>
+
+
 
 </body>
 
