@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(to bottom, #82addb 0%, #fad5d4 100%);
-    overflow: hidden;
+    overflow: scroll;
 }
 
 h1 {
@@ -24,6 +24,10 @@ h1 {
 
 #saved a,
 #home a {
+    color: black;
+}
+
+#saved a:hover {
     color: white;
 }
 
@@ -43,16 +47,49 @@ h1 {
     transform: scale(1.2);
 }
 
+#emojis img:active {
+    transform: translateY(10px);
+}
+
 #msg {
     text-align: center;
     font-size: 1.5em;
     padding-top: 2em;
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
+    -webkit-animation: fadeIn linear 2s;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 #add {
     display: none;
+    -webkit-animation: fadeIn linear 2s;
+}
+
+.list-msg {
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    margin-top: 5em;
+}
+
+.list-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 18rem;
+    margin: 1em;
 }
 
 @media (max-width: 400px) {

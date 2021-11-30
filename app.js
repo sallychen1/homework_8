@@ -102,5 +102,5 @@ function addToSavedPage() {
     const msg = new Message(content);
     savedpg.push(msg);
     localStorage.setItem('savedList', JSON.stringify(savedpg));
-    alert("Added to saved list!");
+    alert("Message Saved!");
 }
