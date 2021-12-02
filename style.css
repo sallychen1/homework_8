@@ -13,7 +13,6 @@ h1 {
     font-size: 5em;
     text-align: center;
     padding: 0.5em;
-    color: black;
 }
 
 #time {
@@ -27,7 +26,8 @@ h1 {
     color: black;
 }
 
-#saved a:hover {
+#saved a:hover,
+#home a:hover {
     color: white;
 }
 
@@ -72,10 +72,10 @@ h1 {
 #add {
     display: none;
     -webkit-animation: fadeIn linear 2s;
+    margin-bottom: 2em;
 }
 
 .list-msg {
-    color: white;
     text-align: center;
     font-size: 2em;
     margin-top: 5em;

@@ -104,3 +104,8 @@ function addToSavedPage() {
     localStorage.setItem('savedList', JSON.stringify(savedpg));
     alert("Message Saved!");
 }
+
+function myFunction() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+}
